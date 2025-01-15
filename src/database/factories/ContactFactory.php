@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use APP\Models\Contact;
 
+
 class ContactFactory extends Factory
 {
     protected $model=Contact::Class;
@@ -12,13 +13,14 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'first_name'=>$this->faker->firstName,
-            'last_name'=>$this->faker->lastName,
-            'email'=>$this->faker->unique()->safeEmail,
-            'tel'=>$this->faker->numerify('0###-####-####'),
-            'address'=>$this->faker->address,
-            'building'=>$this->faker->buildingNumber,
-            'detail'=>$this->faker->text(120)
+            'category_id'=>$this->faker->numberBetween(1,5),
+            'first_name'=>$this->faker->firstName(255),
+            'last_name'=>$this->faker->lastName(255),
+            'gender'=>$this->faker->randomElement(['male','female']),
+            'email'=>$this->faker->unique()->safeEmail(255),
+            'tel'=>$this->faker->phoneNumber(255),
+            'address'=>$this->faker->address(255),
+            'detail'=>$this->faker->text(120),
 ];
     }
 }

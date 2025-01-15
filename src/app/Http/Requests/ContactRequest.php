@@ -28,7 +28,7 @@ class ContactRequest extends FormRequest
             'last_name'=>['required','string','max:255'],
             'gender'=>['required'],
             'email'=>['required','string','email','max:255'],
-            'tel'=>['required','regex:^[0-9]+$/','digits_between:1,5'],
+            'tel'=>['required','numeric','regex:/^\d+$/','digits_between:1,5'],
             'address'=>['required','string','max:255'],
             'category'=>['required'],
             'detail'=>['required','string','max:120'],
