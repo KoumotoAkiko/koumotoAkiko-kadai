@@ -15,9 +15,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+
 
 Route::get('/',[ContactController::class, 'index']);
 Route::post('/contacts/confirm',[ContactController::class, 'confirm']);

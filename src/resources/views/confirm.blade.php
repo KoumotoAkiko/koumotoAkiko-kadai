@@ -82,7 +82,7 @@
         <button class="form__button-submit" type="submit">送信</button>
     </div>
 <div>
-<a> href="/">修正する</a>
+<a href="/">修正する</a>
 </div>
 </form>
 </div>
