@@ -4,17 +4,6 @@
 ## ER図
 ![ER図](ER.drawio.png)
 ## 環境構築
-＜使用技術＞
-・Lalavel 8.83.8
-・PHP 7.4.9
-・Mysql 15.1
-・Composer 2.8.4
-
-URL
-・環境開発：http://localhost/
-・phpMyAdmin:http://localhost:8080/
-
-＜環境構築＞
 1.リポジトリからダウンロード
 $git clone git@github.com:KoumotoAkiko/koumotoAkiko-kadai.git
 
@@ -48,3 +37,13 @@ $ docker-compose exec php bash
 "The stream or file could not be opened"エラーが発生した場合
 ディレクトリ/ファイルの権限を変更
 $ sudo chmod -R 777 src/storage
+
+## 使用技術
+・Lalavel 8.83.8
+・PHP 7.4.9
+・Mysql 15.1
+・Composer 2.8.4
+
+## URL
+・環境開発：http://localhost/
+・phpMyAdmin:http://localhost:8080/
