@@ -15,11 +15,11 @@ class ContactController extends Controller
         return view('index',compact('categories'));
     }
      public function confirm(ContactRequest $request){
-        $contact=$request->only(['first_name','last_name','gender','email','tel','address','building','detail','content', 'category_id']);
+        $contact=$request->only(['first_name','last_name','gender','email','tel','address','building','detail','category_id']);
         return view('confirm', compact('contact'));
      }
     public function store(Request $request){
-        $contact=$request->only(['first_name', 'last_name' ,'gender','email','tel','address','building','detail','content', 'category_id']);
+        $contact=$request->only(['first_name', 'last_name' ,'gender','email','tel','address','building','detail','category_id']);
         Contact::create($contact);
         Category::create($category);
         return view('thanks');
