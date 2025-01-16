@@ -24,8 +24,6 @@ Route::get('/contacts', [ContactController::class, 'create']);
 Route::get('/contacts/search',[ContactController::class, 'search']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [AuthController::class, 'admin']);
+    Route::get('/admin', [AdminController::class, 'admin']);
 });
-
-Route::get('/admin', [AdminController::class, 'index']);
 
