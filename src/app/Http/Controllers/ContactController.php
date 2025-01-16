@@ -11,17 +11,18 @@ use App\Models\Contact;
 class ContactController extends Controller
 {
     public function index(){
-        $contacts=Contact::with('categories')->get();
-        $categories=Category::all();
-        return view('index',compact('contacts', 'categories'));
+        $contacts=Contact::with('category')->get();
+        $categories = Category::all();
+        return view('index',compact('categories'));
     }
      public function confirm(ContactRequest $request){
-        $contact=$request->only(['first_name','last_name','gender','email','tel','address','building','detail','category']);
+        $contact=$request->only(['first_name','last_name','gender','email','tel','address','building','detail','content', 'category_id']);
         return view('confirm', compact('contact'));
      }
-    public function store(ContactRequest $request){
-        $contact=$request->only(['first_name', 'last_name' ,'gender','email','tel','address','building','detail','category_id','content']);
-        contact::create($contact);
+    public function store(Request $request){
+        $contact=$request->only(['first_name', 'last_name' ,'gender','email','tel','address','building','detail','content', 'category_id']);
+        Contact::create($contact);
+        Category::create($category);
         return view('thanks');
     }
     
@@ -30,7 +31,5 @@ class ContactController extends Controller
         $categories = Category::all();
         return view('contact.create', compact('categories'));
         }
-
-
 
 }

@@ -24,7 +24,7 @@
       <div class="contact-form__heading">
         <h2>お問い合わせ</h2>
       </div>
-      <form class="form" action="/confirm" method="post">
+      <form class="form" action="contacts/confirm" method="post">
         @csrf
         <div class="form__group">
           <div class="form__group-title">
@@ -133,16 +133,17 @@
           </div>
           <div class="form__group-content">
             <div class="form__input-select">
-              <select class="form__group-category" name="category_id">
-                @foreach($categories as $category)
-            <option value="{{ $category['id']}}"><{{$category['content']}}>選択してください</option>
-                @endforeach
+              <select name="content" id="content" class="form__group-category">
+              <option value="">選択してください</option>
+              @foreach($categories as $category)
+            <option value="{{ $category->content }}">{{ $category->content }}</option>
+            @endforeach
               </select>
             <div class="form__error">
             @error('category')
             {{ $message }}
             @enderror
-            </div>
+           </div>
           </div>
         </div>
         <div class="form__group">

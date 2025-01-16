@@ -1,16 +1,11 @@
-.header{
-    background-color:#000;
+.header {
+    background: #000;
 }
 
 .header__inner {
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
-}
-.header-utilities {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .header__logo {
@@ -19,7 +14,6 @@
     font-weight: bold;
     font-size: 24px;
 }
-
 .header-utilities nav {
     width: 18%;
 }
@@ -41,17 +35,4 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-}
-
-.user-table__header{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #000
-}
-.user-table__header-span{
-    padding: 5px 10px;
-    text-align: center;
-    flex: 1;
 }
