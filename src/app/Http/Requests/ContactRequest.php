@@ -30,7 +30,7 @@ class ContactRequest extends FormRequest
             'email'=>['required','string','email','max:255'],
             'tel'=>['required','numeric','regex:/^\d+$/','digits_between:1,5'],
             'address'=>['required','string','max:255'],
-            'content'=>['required'],
+            'category_id'=>['required'],
             'detail'=>['required','string','max:120'],
             
         ];
@@ -55,7 +55,7 @@ class ContactRequest extends FormRequest
             'address.required'=>'住所を入力してください',
             'address.string'=>'住所を文字列でん入力してください',
             'address.max'=>'住所を255文字以下で入力してください',
-            'content.required'=>'お問い合わせの種類を選択してください',
+            'category_id.required'=>'お問い合わせの種類を選択してください',
             'detail.required'=>'お問い合わせの内容を入力してください',
             'detail.string'=>'お問い合わせの内容を文字列で入力してください',
             'detail.max'=>'お問い合わせ内容は120文字以内で入力してください',
