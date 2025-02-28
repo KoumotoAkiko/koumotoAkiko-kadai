@@ -5,37 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UserManagement</title>
+    <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     @yield('css')
 </head>
 
 <body>
-    <header class="header">
-    <div class="header__inner">
-        <div class="header-utilities">
-            <a class="header__logo" href="/">User Management</a>
-            <nav>
-                <ul class="header-nav">
-                    @if (Auth::check())
-                    <li class="header-nav__item">
-                        <form class="form" action="/logout" method="post">
-                        @csrf
-                        <button class="header-nav__button">logout</button>
-                        </form>
-                    </li>
-                    @endif
-                </ul>
-            </nav>
-            @yield('header-nav')
+    <div class="app">
+        <header class="header">
+            <h1 class="header__heading">FashionablyLate</h1><!--共通のヘッダーの部分-->
+            @yield('link')<!-- ヘッダー内に入れる　遷移用のリンクはそれぞれに作る　-->
+        </header>
+        <div class="content">
+            @yield('content')
         </div>
     </div>
-    </header>
-
-
-<main>
-    @yield('content')
-</main>
 </body>
 </html>

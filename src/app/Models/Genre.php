@@ -5,25 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Genre extends Model
 {
     use HasFactory;
-
 
     protected $guarded=[
         'id',
     ];
 
-    public function category()
+    public function contact()
     {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function genres()
-    {
-        return $this->belongsToMany(genre::class);
+        return $this->belongToMany(contact::class);
     }
 }
-
-
-
